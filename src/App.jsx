@@ -1,37 +1,26 @@
-const Navbar = () => {
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Login from "./pages/Login";
+import { Routes, Route } from "react-router-dom";
+import NoteState from "./context/notes/NoteState.jsx";
+
+function App() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div className="container">
+    <NoteState>
+    <>
+      <Navbar />
 
-        <a className="navbar-brand" href="#">MyNotebook</a>
-
-        {/* Toggler button (important for layout) */}
-        <button 
-          className="navbar-toggler" 
-          type="button" 
-          data-bs-toggle="collapse" 
-          data-bs-target="#navbarNav"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <a className="nav-link" href="#">Home</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">About</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Login</a>
-            </li>
-          </ul>
-        </div>
-
+      <div className="container mt-4">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
       </div>
-    </nav>
+    </>
+    </NoteState>
   );
-};
+}
 
-export default Navbar;
+export default App;
