@@ -1,24 +1,58 @@
 function Home() {
   return (
     <div>
-      <h1>Home Page</h1>
-    <form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1"/>
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form> 
+      <div className="container mt-5">
+        <h1 className="text-center fw-bold mb-5">
+          Create the notes no one can read
+        </h1>
 
+        <div className="row align-items-center">
+          {/* LEFT SIDE */}
+          <div className="col-md-3">
+            <div className="card p-3 shadow-sm text-center">
+              <h5>🔒 Secure Notes</h5>
+              <p>Your notes are encrypted and private.</p>
+            </div>
+          </div>
+
+          {/* FORM */}
+          <div className="col-md-6">
+            <div className="card p-4 shadow">
+              <form>
+                <div className="mb-3">
+                  <label className="form-label">Email address</label>
+                  <input type="email" className="form-control" />
+                </div>
+
+                <div className="mb-3">
+                  <label className="form-label">Password</label>
+                  <input type="password" className="form-control" />
+                </div>
+                <div className="mb-3 form-check">
+                  <input
+                    type="checkbox"
+                    className="form-check-input border-dark"
+                    id="rememberMe"
+                  />
+                  <label className="form-check-label ms-2" htmlFor="rememberMe">
+                    Remember Me
+                  </label>
+                </div>
+
+                <button className="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+
+          {/* RIGHT SIDE */}
+          <div className="col-md-3">
+            <div className="card p-3 shadow-sm text-center">
+              <h5>⚡ Fast Access</h5>
+              <p>Access your notes anytime anywhere.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
