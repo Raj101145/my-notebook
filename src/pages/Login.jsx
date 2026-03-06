@@ -38,7 +38,9 @@ function Login() {
   };
 
   return (
+    
     <div className="container mt-5">
+      <h4 className ="text-center">Login page</h4>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label>Email</label>
@@ -63,7 +65,7 @@ function Login() {
         <button className="btn btn-primary">Login</button>
       </form>
       <p className="mt-3">
-       Don't have an account? Signup<a href="/login">Signup</a>
+       Don't have an account? Signup<a href="/signup">Signup</a>
       </p>
     </div>
   );

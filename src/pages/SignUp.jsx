@@ -91,6 +91,9 @@ function Signup() {
         </button>
 
       </form>
+       <p className="mt-3">
+       Don't have an account? Signup<a href="/login">login</a>
+      </p>
     </div>
   );
 }
