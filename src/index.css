@@ -63,3 +63,9 @@ body {
   font-weight: 700;
   margin-bottom: 40px;
 }
+
+.card.auth-card{
+  background: linear-gradient(135deg, #8a7f74, #5f5750) !important;
+  color: white !important;
+  border-radius: 12px;
+}

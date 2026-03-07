@@ -26,7 +26,7 @@ function Home() {
 
           {/* CENTER FORM */}
           <div className="col-md-6">
-            <div className="card p-5 shadow text-center">
+            <div className="card shadow p-4 auth-card">
               <h4 className="mb-3">Start Your Secure Notebook</h4>
 
               <p className="text-muted">
