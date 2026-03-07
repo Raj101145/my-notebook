@@ -24,6 +24,7 @@ function Signup() {
     });
 
     const json = await response.json();
+      console.log("Signup response:", json); 
 
     if (json.authToken) {
       localStorage.setItem("token", json.authToken);
