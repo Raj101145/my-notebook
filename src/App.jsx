@@ -9,18 +9,49 @@ import NoteState from "./context/notes/NoteState.jsx";
 function App() {
   return (
     <NoteState>
-      <>
-        <Navbar />
 
-        <div className="container mt-4">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-          </Routes>
-        </div>
-      </>
+      <Navbar />
+
+      <Routes>
+
+        <Route
+          path="/"
+          element={
+            <div className="container mt-4">
+              <Home />
+            </div>
+          }
+        />
+
+        <Route
+          path="/about"
+          element={
+            <div className="container mt-4">
+              <About />
+            </div>
+          }
+        />
+
+        <Route
+          path="/login"
+          element={
+            <div className="container mt-4">
+              <Login />
+            </div>
+          }
+        />
+
+        <Route
+          path="/signup"
+          element={
+            <div className="container mt-4">
+              <Signup />
+            </div>
+          }
+        />
+
+      </Routes>
+
     </NoteState>
   );
 }

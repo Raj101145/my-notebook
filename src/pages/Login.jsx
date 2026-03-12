@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 function Login() {
@@ -10,6 +10,12 @@ function Login() {
     password: ""
   });
 
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigate("/");
+    }
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -20,10 +26,7 @@ function Login() {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-          email: credentials.email,
-          password: credentials.password
-        })
+        body: JSON.stringify(credentials)
       });
 
       const json = await response.json();
@@ -32,10 +35,8 @@ function Login() {
 
       if (json.authToken) {
 
-        // save token
         localStorage.setItem("token", json.authToken);
 
-        // redirect to homepage
         navigate("/");
 
       } else {
@@ -51,10 +52,12 @@ function Login() {
   };
 
   const onChange = (e) => {
+
     setCredentials({
       ...credentials,
       [e.target.name]: e.target.value
     });
+
   };
 
   return (
